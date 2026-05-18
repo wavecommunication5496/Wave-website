@@ -46,6 +46,55 @@
     50%  { stroke-dashoffset: 60; }
     100% { stroke-dashoffset: 0; }
   }
+
+  /* ===== MOBILE RESPONSIVE ===== */
+  @media (max-width: 768px) {
+
+    /* NAV */
+    .wc-nav { padding: 1rem 1.5rem; }
+    .wc-nav-links { display: none; }
+
+    /* HERO */
+    .wc-hero { min-height: 100svh; }
+    .wc-hero-logo-word { font-size: 20px; }
+    .wc-hero-logo-sub { font-size: 10px; }
+    .wc-hero-eyebrow { font-size: 10px; letter-spacing: 0.12em; }
+
+    /* REVIEWS GRID - 1 column on mobile */
+    .wc-testi-wrapper { padding: 3rem 1rem; }
+    .wc-testi-title { font-size: 24px; margin-bottom: 1.5rem; }
+    .wc-testi-label { font-size: 11px; }
+
+    /* Override the 3-col grid to 1-col */
+    .wc-testi-wrapper div[style*="grid-template-columns:repeat(3"] {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* CONTACT FORM */
+    .wc-section { grid-template-columns: 1fr !important; }
+    .wc-wrapper { width: 100% !important; margin-left: 0 !important; padding: 2rem 1rem; }
+    .wc-row { grid-template-columns: 1fr !important; }
+    .wc-right { border-radius: 0 0 12px 12px !important; padding: 2rem 1.5rem !important; }
+    .wc-left { padding: 2rem 1.5rem !important; }
+
+    /* PROVIDERS */
+    .provider-section { padding: 50px 20px; }
+    .provider-container { flex-direction: column; gap: 30px; }
+    .provider-title { font-size: 38px; }
+    .provider-right { width: 100% !important; height: 220px !important; }
+
+    /* FOOTER */
+    footer { flex-direction: column; text-align: center; padding: 2rem 1rem; }
+    footer > div:last-child { text-align: center; }
+  }
+
+  @media (max-width: 480px) {
+    .wc-hero-title { font-size: 32px; }
+    .provider-title { font-size: 32px; }
+    .wc-testi-card { padding: 1.2rem; }
+    .wc-testi-quote { font-size: 13px; }
+    .wc-testi-name { font-size: 13px; }
+  }
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 <style>
@@ -346,6 +395,15 @@
 
 		.s0 { fill: #0082bb } 
 	
+</style>
+<style>
+@media (max-width: 480px) {
+  .reviews-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+  .wc-testi-wrapper { padding: 3rem 1rem !important; }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .reviews-grid { grid-template-columns: repeat(3, 1fr) !important; }
+}
 </style>
 </head>
 <body>
@@ -849,7 +907,7 @@
 
     <!-- REVIEWS GRID -->
   <div style="max-width:1200px; margin:0 auto; padding: 0 2rem 2rem;">
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;" class="reviews-grid">
 
       <div class="wc-testi-card">
         <div class="wc-testi-stars">★★★★★</div>
